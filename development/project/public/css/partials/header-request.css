@@ -1,0 +1,34 @@
+
+.header-request{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: white;
+    box-shadow: #373740 0 0 10px;
+}
+.header-request .go_back{
+    grid-area: 1/1/2/2;
+}
+.header-request .logo{
+    margin: 0  5%;
+    font-size: 72px;
+    font-family: "Rubik";
+    width: 100%;
+    color: #373740;
+    font-weight: 900;
+}
+.header-request .back_button{
+    
+    border: 0;
+    background: transparent;
+    height: 100%;
+    cursor: pointer;
+}
+.header-request .icon_back {
+    max-width: 5rem;   
+  	height: auto; 
+    position: fixed;
+    margin: -2% 0.5%;
+}
