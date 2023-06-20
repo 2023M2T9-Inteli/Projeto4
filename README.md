@@ -30,13 +30,10 @@
 # Descrição 
 > 📜 O respectivo projeto foi desenvolvido pelo grupo Datails no módulo 2 da turma 2023.1 do Inteli (Instituto de Tecnologia e Liderança) em parceria com o Banco Pan. De forma resumida, o projeto será um <strong>catálogo de dados</strong> para os bancos de dados do Banco Pan. Nele o usuário terá uma plataforma de pesquisa para que busque por dados em tabelas de forma simples e prática, podendo organiza-las por filtros e analisar seus dados de forma visualmente agradável.
 <br><br>
-<p align="center">
-<img src="" alt="Logotipo da Aplicação" border="0">
-</p>
 
 ## 📝 LINK
 
-Clique <a href="https://www.linkedin.com/in/victorbarq/">AQUI</a> para ver o projeto funcionando.
+Clique <a href="">AQUI</a> para ver o projeto funcionando.
 
 ## 📁 Estrutura de pastas
 
@@ -125,8 +122,9 @@ Para abrir este projeto você precisa baixar o <a href="https://nodejs.org/en">N
     * Atualização do WAD
   
  * 0.5.0 - 23/06/2023
-    * 
-    *
+    * Organização de pastas
+    * Atualização na base de dados
+    * Atualização do WAD
 
 
 ## 📋 Licença/License
