@@ -6,6 +6,14 @@
 </p>
 
 # Pangeia 📝
+## Integrantes: 
+   <a href="https://www.linkedin.com/in/ana-clara-madureira-marques/">Ana Clara Madureira Marques</a><br>
+    <a href="https://www.linkedin.com/in/bruno-martins-2b6742269/">Bruno Martins</a><br>
+    <a href="https://www.linkedin.com/in/caio-paula-36b187264/">Caio Teixeira de Paula </a><br>
+    <a href="http://linkedin.com/in/eduardo-henrique-dos-santos-8b24451b8">Eduardo Henrique dos Santos</a><br>
+    <a href="https://www.linkedin.com/in/lucas-rego-90469a271/">Lucas Bittencourt Moraes Rego</a><br>
+    <a href="https://www.linkedin.com/in/luiza-rubim/">Luiza Souza Rubim</a><br>
+    <a href="https://www.linkedin.com/in/yan-m-coutinho/"> Yan Mendonça Coutinho </a><br>
 # Descrição 
 > 📜 O respectivo projeto foi desenvolvido pelo grupo Datails no módulo 2 da turma 2023.1 do Inteli (Instituto de Tecnologia e Liderança) em parceria com o Banco Pan. De forma resumida, o projeto será um <strong>catálogo de dados</strong> para os bancos de dados do Banco Pan. Nele o usuário terá uma plataforma de pesquisa para que busque por dados em tabelas de forma simples e prática, podendo organiza-las por filtros e analisar seus dados de forma visualmente agradável.
 <br><br>
@@ -109,16 +117,7 @@ Para abrir este projeto você precisa baixar o <a href="https://nodejs.org/en">N
 
 ## 📋 Licença/License
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/2023M2T9-Inteli/projeto4">Pangeia</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/2023M2T9-Inteli/projeto4">INTELI, Ana Clara Madureira Marques, Bruno Discacciati Vieiralves Martins, Caio Teixeira de Paula, Eduardo Henrique dos Santos, Lucas Bittencourt Moraes Rego, Luiza Souza Rubim, Yan Mendonça Coutinho</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></p>
-Equipe Datails<br>
-Link do deploy: <a href=""/>https://2023M2T9-Inteli/Projeto4/</a> </br>
-Integrantes: <br>
-    <a href="https://www.linkedin.com/in/ana-clara-madureira-marques/">Ana Clara Madureira Marques</a><br>
-    <a href="https://www.linkedin.com/in/bruno-martins-2b6742269/">Bruno Martins</a><br>
-    <a href="https://www.linkedin.com/in/caio-paula-36b187264/">Caio Teixeira de Paula </a><br>
-    <a href="http://linkedin.com/in/eduardo-henrique-dos-santos-8b24451b8">Eduardo Henrique dos Santos</a><br>
-    <a href="https://www.linkedin.com/in/lucas-rego-90469a271/">Lucas Bittencourt Moraes Rego</a><br>
-    <a href="https://www.linkedin.com/in/luiza-rubim/">Luiza Souza Rubim</a><br>
-    <a href="https://www.linkedin.com/in/yan-m-coutinho/"> Yan Mendonça Coutinho </a><br>
+
 
 ## 🎓 Referências
 Aqui estão as referências utilizadas no projeto. <br>
