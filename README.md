@@ -6,6 +6,7 @@
 </p>
 
 # Pangeia 📝
+## Datails
 ## Integrantes: 
    <a href="https://www.linkedin.com/in/ana-clara-madureira-marques/">Ana Clara Madureira Marques</a><br>
     <a href="https://www.linkedin.com/in/bruno-martins-2b6742269/">Bruno Martins</a><br>
@@ -20,9 +21,6 @@
 <p align="center">
 <img src="" alt="Logotipo da Aplicação" border="0">
 </p>
-
-# Datails 
-## Integrantes<a href="https://www.linkedin.com/in/ana-clara-madureira-marques/">Ana Marques</a>, <a href="https://www.linkedin.com/in/bruno-martins-2b6742269/">Bruno Martins</a>, <a href="https://www.linkedin.com/in/caio-paula-36b187264/">Caio Paula</a>, <a href="http://linkedin.com/in/eduardo-henrique-dos-santos-8b24451b8">Eduardo Henrique</a>, <a href="https://www.linkedin.com/in/lucas-rego-90469a271/">Lucas Rego</a>, <a href="https://www.linkedin.com/in/luiza-rubim/">Luiza Rubim</a>, <a href="https://www.linkedin.com/in/yan-m-coutinho/"> Yan Coutinho </a>
 
 ## 🛠 Estrutura de pastas
 
