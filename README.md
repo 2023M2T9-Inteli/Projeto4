@@ -7,14 +7,15 @@
 
 # Pangeia 📝
 ## Datails
-## Integrantes: 
-   <a href="https://www.linkedin.com/in/ana-clara-madureira-marques/">Ana Clara Madureira Marques</a><br>
-    <a href="https://www.linkedin.com/in/bruno-martins-2b6742269/">Bruno Martins</a><br>
-    <a href="https://www.linkedin.com/in/caio-paula-36b187264/">Caio Teixeira de Paula </a><br>
-    <a href="http://linkedin.com/in/eduardo-henrique-dos-santos-8b24451b8">Eduardo Henrique dos Santos</a><br>
-    <a href="https://www.linkedin.com/in/lucas-rego-90469a271/">Lucas Bittencourt Moraes Rego</a><br>
-    <a href="https://www.linkedin.com/in/luiza-rubim/">Luiza Souza Rubim</a><br>
-    <a href="https://www.linkedin.com/in/yan-m-coutinho/"> Yan Mendonça Coutinho </a><br>
+## 🧑‍🎓 Integrantes: 
+   - <a href="https://www.linkedin.com/in/ana-clara-madureira-marques/">Ana Clara Madureira Marques
+     </a> <br>
+   - <a href="https://www.linkedin.com/in/bruno-martins-2b6742269/">Bruno Martins</a><br>
+   - <a href="https://www.linkedin.com/in/caio-paula-36b187264/">Caio Teixeira de Paula </a><br>
+   - <a href="http://linkedin.com/in/eduardo-henrique-dos-santos-8b24451b8">Eduardo Henrique dos Santos</a><br>
+   - <a href="https://www.linkedin.com/in/lucas-rego-90469a271/">Lucas Bittencourt Moraes Rego</a><br>
+   - <a href="https://www.linkedin.com/in/luiza-rubim/">Luiza Souza Rubim</a><br>
+   - <a href="https://www.linkedin.com/in/yan-m-coutinho/"> Yan Mendonça Coutinho </a><br>
 # Descrição 
 > 📜 O respectivo projeto foi desenvolvido pelo grupo Datails no módulo 2 da turma 2023.1 do Inteli (Instituto de Tecnologia e Liderança) em parceria com o Banco Pan. De forma resumida, o projeto será um <strong>catálogo de dados</strong> para os bancos de dados do Banco Pan. Nele o usuário terá uma plataforma de pesquisa para que busque por dados em tabelas de forma simples e prática, podendo organiza-las por filtros e analisar seus dados de forma visualmente agradável.
 <br><br>
