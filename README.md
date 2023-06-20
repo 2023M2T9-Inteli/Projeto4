@@ -16,6 +16,16 @@
    - <a href="https://www.linkedin.com/in/lucas-rego-90469a271/">Lucas Bittencourt Moraes Rego</a><br>
    - <a href="https://www.linkedin.com/in/luiza-rubim/">Luiza Souza Rubim</a><br>
    - <a href="https://www.linkedin.com/in/yan-m-coutinho/"> Yan Mendonça Coutinho </a><br>
+
+## :teacher: Professores:
+### Orientador(a) 
+- <a href="https://www.linkedin.com/in/claudio-andr%C3%A9-64911a1b5/">Claudio André</a>
+### Instrutores
+- <a href="https://www.linkedin.com/in/fatima-toledo/">Fatima Toledo</a>
+- <a href="https://www.linkedin.com/in/flaviomarquesazevedo/">Flavio Marques Azevedo</a> 
+- <a href="https://www.linkedin.com/in/francisco-escobar/">Francisco Escobar</a> 
+- <a href="https://www.linkedin.com/in/henrique-mohallem-paiva-6854b460/">Henrique Paiva</a>
+
 # Descrição 
 > 📜 O respectivo projeto foi desenvolvido pelo grupo Datails no módulo 2 da turma 2023.1 do Inteli (Instituto de Tecnologia e Liderança) em parceria com o Banco Pan. De forma resumida, o projeto será um <strong>catálogo de dados</strong> para os bancos de dados do Banco Pan. Nele o usuário terá uma plataforma de pesquisa para que busque por dados em tabelas de forma simples e prática, podendo organiza-las por filtros e analisar seus dados de forma visualmente agradável.
 <br><br>
@@ -23,7 +33,11 @@
 <img src="" alt="Logotipo da Aplicação" border="0">
 </p>
 
-## 🛠 Estrutura de pastas
+## 📝 LINK
+
+Clique <a href="https://www.linkedin.com/in/victorbarq/">AQUI</a> para ver o projeto funcionando.
+
+## 📁 Estrutura de pastas
 
 <pre>
 ├───docs
