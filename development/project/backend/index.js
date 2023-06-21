@@ -555,8 +555,6 @@ app.get('/search', async (req, res) => {
 			}
 
 			res.statusCode = 200;
-			console.log(sql);
-			console.log(result);
 			res.render('results', {
 				results: result,
 				qtdRows: (qtdConsultRows - 1),

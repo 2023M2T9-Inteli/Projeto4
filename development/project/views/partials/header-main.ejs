@@ -10,12 +10,11 @@
                 </li>
             </ul>
         </div>
-        <div class="content-level" style="display: none;">
-            <figure>
-                <img src="../imagens/Senstive 2.svg" alt="">
-            </figure>
-            <label for="">Contém dados sensíveis</label>
-        </div>
+        <% if(String(table.DADOS_SENSIVEIS).trim().toLowerCase() == 's'){%>
+            <div class="content-level">
+                <img src="/img/sensitive-content.svg" title="Essa tabela contém dados sensíveis" alt="Imagem que informa que essa tabela contém dados sensíveis">
+            </div>
+        <%}%>
     </section>
     <nav class="nav-bat-top-main">
         <section class="nav-bat-top-main">

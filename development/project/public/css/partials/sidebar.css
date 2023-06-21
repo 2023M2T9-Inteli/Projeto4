@@ -1,6 +1,7 @@
 .sidebar-content{
     position: fixed;
     top: 0;
+    z-index: 5;
 }
 .sidebar-content a{
     display: flex;

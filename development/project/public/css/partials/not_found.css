@@ -11,10 +11,7 @@
     color: #B5B5B8;
     font-size: 3rem;
     grid-area: 3/5/4/9;
-
 }
-
-
 
 .content1 {
     padding-top: 3%;
@@ -24,7 +21,6 @@
 .world_map {
     grid-area: 5/4/12/10;
 }
-
 
 @media screen and (max-width: 1320px) {
     .world_map {
