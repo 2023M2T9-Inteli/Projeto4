@@ -1,13 +1,13 @@
 .successtoast {
-    margin: 0 ;
-    padding: 0;
-  }
+  margin: 0;
+  padding: 0;
+}
 
 .successtoast {
   position: absolute;
   right: 0;
   top: 7vh;
-  margin: 30px;
+  margin: 2%;
   overflow: hidden;
 
   background: #9bf0bd;
@@ -15,7 +15,7 @@
   height: auto;
   width: 150px;
   padding: 12px;
-  border-radius: 8px ;
+  border-radius: 8px;
   box-shadow: 0 0 8px rgba(56, 56, 56, 0.8);
 
   display: flex;
@@ -24,14 +24,14 @@
 
 }
 
-#success strong{
+#success strong {
   color: #467757;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.5em;
 }
 
 .errortoast {
-  margin: 0 ;
+  margin: 0;
   padding: 0;
 }
 
@@ -46,7 +46,7 @@
   height: auto;
   width: 150px;
   padding: 12px;
-  border-radius: 8px ;
+  border-radius: 8px;
   box-shadow: 0 0 8px rgba(56, 56, 56, 0.8);
 
   display: flex;
