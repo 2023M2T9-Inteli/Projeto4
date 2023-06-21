@@ -761,10 +761,22 @@ app.post('/request', urlencodedParser, async (req, res) => {
 		"volatile": "VOLATIL",
 		"LGPD": "LGPD",
 	}
-	
+
 	res.setHeader('Access-Control-Allow-Origin', '*');
-	console.log(req.body);
-	res.end();
+	let data = req.body;
+
+	console.log(data);
+
+	if (data.table) {
+		for (let index in data.table) {
+			let obj = {}
+			let dbIndex = dataToDBColumns[index];
+			obj[dbIndex] = data.table[index];
+			console.log(data.tableID.ALTERACAO)
+			await DBM.update('TB_TABELA', obj, `ID=${data.tableID.ALTERACAO}`);
+		}
+	}
+	res.json({'error': true});
 });
 
 

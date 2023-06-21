@@ -5,6 +5,9 @@ export function sendCustumizedData(event) {
     let fields = document.querySelectorAll('form fieldset.field');
     let values = {"fields": {}};
 
+    let baseInputs = document.querySelectorAll('form > input:not([disabled])');
+    values = joinObjects(values, getInputsValues(baseInputs));
+
     let inputsTable = document.querySelectorAll('form > details > fieldset > section > div > input:not([disabled])');
     let selectsTable = document.querySelectorAll('form > details > fieldset > section > div > select:not([disabled])');
     let textareaTable = document.querySelectorAll('form > details > fieldset > section > div > textarea:not([disabled])');
@@ -36,9 +39,6 @@ export function sendCustumizedData(event) {
         }
     });
 
-    var formData = new FormData();
-    formData.append('data', JSON.stringify(values));
-
     const head = {
         method: "POST", 
         mode: "cors", 
@@ -52,7 +52,6 @@ export function sendCustumizedData(event) {
         body: JSON.stringify(values), 
     };
 
-    console.log(head)
     fetch('/request', head).then((response) => {
         console.log(response);
     }).catch((error) => {
