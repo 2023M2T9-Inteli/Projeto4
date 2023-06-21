@@ -6,9 +6,8 @@
 
 
 <script>
-  // This function is scheduled to run 3 seconds after the page loads.
-  var cont = 0;
-  if (parseInt(cont) == 0) {
+  // This function is scheduled to run 1 seconds after the page loads.
+  
     setTimeout(function () {
       document.getElementById('successtoast').animate([
         { transform: 'translateY(0px)' },
@@ -19,14 +18,9 @@
       )
     }, 200);
 
-    // This function is scheduled to run 6 seconds after the page loads.
+    // This function is scheduled to run 1 seconds after the page loads.
     setTimeout(function () {
-      document.getElementById('successstoast').style.display = 'none';
-    }, 6000);
-  }
-
-
-
-
-
+      document.getElementById('successtoast').style.display = 'none';
+    }, 1000);
+  
 </script>
