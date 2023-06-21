@@ -45,13 +45,13 @@ Clique <a href="">AQUI</a> para ver o projeto funcionando.
 │          └───classes
 │     ├───data
 │     ├───node_modules
-      ├───public
-          └───css
-          └───img
-          └───js
-      ├───views
-          └───pages
-          └───partials
+|     ├───public
+|          └───css
+|          └───img
+|          └───js
+|     ├───views
+|          └───pages
+|          └───partials
 </pre>
 
 A pasta raiz contem dois arquivos que devem ser alterados:
