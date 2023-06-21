@@ -3,7 +3,7 @@ const DBManager = require('./classes/DBManager.js');
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-const DBPATH = 'data/projeto.db';
+const DBPATH = 'data/project.db';
 const DBM = new DBManager(DBPATH)
 
 const hostname = '127.0.0.1';
@@ -825,6 +825,27 @@ app.post('/remove-classification', urlencodedParser, async (req, res) => {
 	let id = req.body.id;
 	await DBM.delete("TB_CLASSIFICACAO_TABELA", "ID_CLASSIFICACAO_TABELA=?", [id]);
 	res.end();
+});
+
+app.post("/delet-req", urlencodedParser, async (req, res)=>{
+	res.statusCode = 200;
+	let id = req.body.id;
+	res.setHeader("Access-Control-Allow-Origin", "*");
+	let error = {"error": false};
+	await DBM.delete("TB_REQUISICAO", "ID_REQUISICAO=?", [id]).catch(() => {
+		error["error"] = true;
+	});
+	await DBM.delete("TB_REQ_VARIALVEL", "ID_REQUISICAO=?", [id]).catch(() => {
+		error["error"] = true;
+	});
+	await DBM.delete("TB_REQ_TABELA", "ID_REQUISICAO=?", [id]).catch(() => {
+		error["error"] = true;
+	});
+	await DBM.delete("TB_REQ_CONEXAO", "ID_REQUISICAO=?", [id]).catch(() => {
+		error["error"] = true;
+	});
+	res.json(error);
+	
 });
 
 app.get("/loading", (req, res) => {

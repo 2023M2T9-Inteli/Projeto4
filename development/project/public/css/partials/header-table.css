@@ -27,8 +27,7 @@
     font-size: x-large;
 }
 .top-body .content-level{
-    margin-left: 65%;
-    display: flex;
+    margin: auto;
 }
 .top-body .content-level label{
     margin: 10px auto;
