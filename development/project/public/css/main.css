@@ -81,8 +81,8 @@ Table of contents
     --ligth-db-color: rgba(0, 0, 0, 0.5);
     --ligth-link-color: darkblue;
     --ligth-linkHover-color: #15B5FF;
-    --ligth-box-border: 3px solid var(--ligth-primari-color);
-    --ligth-box-shadow: 2px 2px 5px black;
+    --ligth-box-border: 0px solid var(--ligth-primari-color);
+    --ligth-box-shadow: #373740 0 0 5px;
 
     /* Dark Mode */
     --dark-text-color: #fff;
@@ -151,7 +151,7 @@ header {
     background-color: var(--dark-text-color);
     display: grid;
     grid-template-columns: repeat(12,1fr);
-    grid-template-rows: 10px 10px 10px 10px;
+    grid-template-rows: repeat(4,12px);
     align-items: center;
     position: fixed;
     width: 100%;

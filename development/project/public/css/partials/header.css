@@ -40,7 +40,7 @@ header .logo-head a{
 
 header logo{
     font-size: 4rem;
-}
+}   
 
 header .search-div-head {
     grid-area: 2/8/4/13;
@@ -48,7 +48,7 @@ header .search-div-head {
 }
 
 header .search-content {
-    height: 40px;
+    height: fit-content;
 }
 
 header .box.search-bar {

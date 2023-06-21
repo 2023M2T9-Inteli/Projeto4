@@ -94,3 +94,18 @@
     color: white;
     transition: all 0 0.5s 1s ;
 }
+
+.access-request{
+    position: fixed;
+    bottom: 2.5vh;
+    right: 1.5vw;
+    padding: 1%;
+    background-color: #07B2FD;
+    color: #fff;
+    border-radius: 50%;
+    z-index: 5;
+    padding-left: 1.6%;
+    padding-right: 1.6%;
+    scale: 80%;
+    box-shadow: var(--ligth-box-shadow);
+    }
