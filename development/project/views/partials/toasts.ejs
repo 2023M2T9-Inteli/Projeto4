@@ -1,0 +1,26 @@
+
+  <div id="successtoast" class="successtoast">
+    <div>
+      <strong id="success">Salvo com sucesso!</strong>
+    </div>
+  </div>
+  <script>
+
+    // This function is scheduled to run 3 seconds after the page loads.
+    setTimeout(function(){
+      document.getElementById('successtoast').animate([
+        {transform: 'translateY(0px)'},
+        {transform: 'translateX(300px)'}
+        ],{
+          duration: 2000,
+        }
+      )
+    }, 3000);
+    
+    // This function is scheduled to run 6 seconds after the page loads.
+    setTimeout(function(){
+      document.getElementById('successstoast').style.display = 'none';   
+    },6000);
+
+  </script>
+

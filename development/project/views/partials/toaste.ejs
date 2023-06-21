@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/partials/toasts.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Foldit:wght@600&family=Instrument+Serif&family=Lato:wght@100&family=Noto+Sans+JP:wght@100&family=Ranchers&display=swap" rel="stylesheet">
+  <title>Toast</title>
+</head>
+<body>
+  <div id="errortoast" class="errortoast">
+    <div>
+      <strong id="error">Erro de salvamento!</strong>
+    </div>
+  </div>
+  <script>
+
+    // This function is scheduled to run 3 seconds after the page loads.
+    setTimeout(function(){
+      document.getElementById('errortoast').animate([
+        {transform: 'translateY(0px)'},
+        {transform: 'translateX(300px)'}
+        ],{
+          duration: 2000,
+        }
+      )
+    }, 3000);
+
+    // This function is scheduled to run 6 seconds after the page loads.
+    setTimeout(function(){
+      document.getElementById('errortoast').style.display = 'none';   
+    },6000);
+
+  </script>
+</body>
+</html>
+
