@@ -111,26 +111,6 @@
                 <summary>Disponibilidade de Atualização</summary>
                 <fieldset>
                     <section>
-                        <% 
-                            let creationDateBase = String(table.DATA_CRIACAO);
-                            let day = creationDateBase.slice(0,2);
-                            let month = creationDateBase.slice(3,5);
-                            let year = creationDateBase.slice(6,10);
-                            let creationDate = `${year}-${month}-${day}`;
-                            
-                        %>
-                            <label for="creationDate">
-                                Data de Criação
-                            </label>
-                            <div class="input flex">
-                                <img class="icon" src="/img/plus-icon.svg" aria-hidden="true">
-                                <input value="<%= creationDate %>" type="date" name="creationDate" id="creationDate">
-                            </div>
-                            <div class="margin-bottom old input flex">
-                                <img class="icon big" src="/img/history-icon.svg" aria-hidden="true">
-                                <input value="<%= creationDate %>" aria-label="Versão antiga" type="date" disabled data-name="creationDate" id="creationDateOld">
-                            </div>
-    
                             <label 
                             title="Esses dados estão “atrasados” quanto tempo em relação ao tempo real? As abreviações são MIN para minutos, H para horas, D para dias, M para meses, A para anos, seguidos de -N onde N é a defasagem. Além disso usamos o texto ONLINE para atualizações em tempo real. A defasagem não leva em conta o tempo de processamento do sistema. A defasagem também não é a frequência de atualização. Uma tabela pode ser atualizada a cada 2h, mas trazer dados D-1.
     Exemplo:
