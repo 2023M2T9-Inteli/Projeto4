@@ -54,22 +54,15 @@ Clique <a href="">AQUI</a> para ver o projeto funcionando.
 |          └───partials
 </pre>
 
-A pasta raiz contem dois arquivos que devem ser alterados:
+Dentre os arquivos presentes na raiz do projeto, definem-se:
 
-<b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
+- <b>readme.md</b>: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 
-Há também 4 pastas que seguem da seguinte forma:
+- <b>documentos</b>: aqui estarão todos os documentos do projeto. Há também uma pasta denominada <b>outros</b> onde estão presentes aqueles documentos complementares ao <b>web application document</b>.
 
-<b>docs</b>: Aqui serão colocados os arquivos compilados do projeto em HTML.
-<br>
-<b>wad</b>: Aqui estará a documentação do projeto: <b>WAD (Web Application Document)/Documentação do Sistema</b>.
-<br>
-Há uma pasta <b>antigos</b> onde estarão todas as versões antigas da documentação.
+- <b>imagens</b>: imagens relacionadas ao projeto como um todo (por exemplo imagens do sistema, do grupo, logotipos e afins).
 
-<b>executáveis</b>: Aqui estarão todos os executáveis do jogo, prontos para rodar e, por isso, há uma pasta para a <b>Web/HTML</b>
-
-<b>src</b>: Nesta pasta irá todo o código fonte do jogo/sistema, pronto para para ser baixado e utilizado.
-
+- <b>src</b>: nesta pasta encontra-se todo o código fonte do sistema (existem duas subpastas <b>backend</b> e <b>frontend</b> que contêm, respectivamente, o código do servidor e o código da página web).
 ## 🛠 Instalação
 
 <b>HTML:</b>
