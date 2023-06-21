@@ -3,7 +3,7 @@ const DBManager = require('./classes/DBManager.js');
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-const DBPATH = 'data/projeto.db.db';
+const DBPATH = 'data/project.db';
 const DBM = new DBManager(DBPATH)
 
 const hostname = '127.0.0.1';
@@ -690,6 +690,7 @@ app.get('/request', async (req, res) => {
 				"ALTERACAO": field["ALTERACAO"], 
 				"ORIGINAL": oldField[0][i]
 			};
+			
 			objectToContainTheObject[i] = object;
 
 			if (undefined == fields[field["ID_VARIAVEL"]]) {
@@ -702,7 +703,7 @@ app.get('/request', async (req, res) => {
 			}
 			fields[field["ID_VARIAVEL"]] = Object.assign(fields[field["ID_VARIAVEL"]], objectToContainTheObject);
 		}
-		console.log(fields)
+		
 		let response = {
 			'ID_TABELA': requestData["ID_TABELA"],
 			'ID_REQUISICAO': requestData["ID_REQUISICAO"],
@@ -720,6 +721,17 @@ app.get('/request', async (req, res) => {
 		
 		res.render("pages/request.ejs", {table: response});
 	});
+});
+
+/**
+ * 
+ */
+app.post('/request', urlencodedParser, async (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	console.log(req.body);
+	console.log(req.query);
+	res.end();
 });
 
 

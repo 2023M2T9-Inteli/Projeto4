@@ -11,7 +11,6 @@
     <% let connection = table.CONEXAO.CAMPOS; %>
     <% let tableFields = table.CAMPOS; %>
     <% let fields = table.VARIAVEL; %>
-    <% console.log(table); %>
     <div class="container make-request">
         <div class="datalists">
             <datalist id="lagDatalist">
@@ -46,7 +45,7 @@
         <form action="" method="post" id="request-review-form">
             <input type="text" hidden="true" name="tableID" value="<%= table.ID_TABELA %>" id="tableID">
             <input type="text" hidden="true" name="connectionID" value="<%= table.CONEXAO.ID_CONEXAO %>" id="connectionID">
-            <h2>Sugerir alteração de metadados</h2>
+            <h2>Aprovar as Alterações de Metadados</h2>
             <section class="article">
                 <label for="justify">Justificativa da alteração</label>
                 <textarea class="input rounded" name="justify" id="justify" disabled rows="5" placeholder="Descreva o porquê dessa alteração"><%= table.JUSTIFICATIVA; %></textarea>
@@ -297,7 +296,7 @@
                         <%let field = table.VARIAVEL[index];%>
                         <details>
                             <summary><%= field.NOME_VARIAVEL %></summary>
-                            <fieldset class="field">
+                            <fieldset class="field"">
                                 <input type="text" hidden value="<%= index %>" name="fieldID" data-type="field">
 
                                 <section>
@@ -464,10 +463,8 @@ BOOLEAN" class="flex" for="fieldType<%= index %>">
                                     <%}%>
                                 </section>
                             </fieldset>
-                        </details>
-                        
-                    <%}%>
-                    
+                        </details>          
+                    <%}%>         
                 </fieldset>    
             </details>
             <%}%>
