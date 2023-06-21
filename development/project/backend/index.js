@@ -3,7 +3,7 @@ const DBManager = require('./classes/DBManager.js');
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-const DBPATH = 'data/project.db';
+const DBPATH = 'data/projeto.db.db';
 const DBM = new DBManager(DBPATH)
 
 const hostname = '127.0.0.1';
@@ -47,7 +47,7 @@ function getTableData(id) {
 			await DBM.select(sql, [id]).then(async (result) => {
 				let response = result[0];
 				let table = response["TABELA"];
-				response["CONEXAO"] = await DBM.select("select * from TB_CONEXAO where ID=?", [id]);
+				response["CONEXAO"] = await DBM.select("select * from TB_CONEXAO where TABELA=?", [table]);
 				response["VARIAVEL"] = await DBM.select("select * from TB_VARIAVEL where TABELA=?", [table]);
 				sql = "select * from TB_CLASSIFICACAO_TABELA where ID_TABELA=?";
 				response["CLASSIFICACAO_TABELA"] = await DBM.select(sql, [id]);
@@ -524,7 +524,7 @@ app.get('/search', async (req, res) => {
 		}).join(" + ");
 	}).join(" + ");
 
-	let sql = "select * from TB_TABELA " +
+	let sql = "select TB_TABELA.ID, TB_TABELA.CONTEUDO_TABELA, TB_TABELA.DADOS_SENSIVEIS, TB_TABELA.TABELA, TB_TABELA.DATABASE from TB_TABELA " +
 		" LEFT JOIN TB_VARIAVEL ON TB_TABELA.TABELA = TB_VARIAVEL.TABELA " +
 		" LEFT JOIN TB_OWNER_STEWARD ON TB_TABELA.CONJUNTODADOS_PRODUTO = TB_OWNER_STEWARD.CONJUNTO_DADOS " +
 		" LEFT JOIN TB_CONEXAO ON TB_TABELA.ID = TB_CONEXAO.ID  " +
@@ -532,7 +532,7 @@ app.get('/search', async (req, res) => {
 		" LEFT JOIN TB_VALOR_CLASSIFICACAO ON TB_CLASSIFICACAO_TABELA.ID_VALOR_CLASSIFICACAO = TB_VALOR_CLASSIFICACAO.ID_VALOR_CLASSIFICACAO  " +
 		" LEFT JOIN TB_CLASSIFICACAO ON TB_VALOR_CLASSIFICACAO.ID_CLASSIFICACAO = TB_CLASSIFICACAO.ID_CLASSIFICACAO  " +
 		` where (${wheres}) collate nocase ` +
-		` group by TB_TABELA.ID ` +
+		` group by TB_TABELA.ID_TABELA ` +
 		` order by (${orderby}) desc, TB_TABELA.RANKING_GOVERNANCA desc`;
 
 	let sqlWithLimit = sql + ` limit ?, ?;`;
@@ -555,6 +555,8 @@ app.get('/search', async (req, res) => {
 			}
 
 			res.statusCode = 200;
+			console.log(sql);
+			console.log(result);
 			res.render('results', {
 				results: result,
 				qtdRows: (qtdConsultRows - 1),
@@ -570,7 +572,8 @@ app.get('/search', async (req, res) => {
 
 	}).catch((error) => {
 		res.statusCode = 500;
-		res.end(error);
+		console.log(error);
+		res.end();
 	});
 });
 
