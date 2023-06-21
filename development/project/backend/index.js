@@ -3,7 +3,7 @@ const DBManager = require('./classes/DBManager.js');
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-const DBPATH = 'data/projeto.db.db';
+const DBPATH = 'data/project.db';
 const DBM = new DBManager(DBPATH)
 
 const hostname = '127.0.0.1';
