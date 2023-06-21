@@ -11,6 +11,7 @@ const port = 3000;
 const app = express();
 
 app.set('view engine', 'ejs');
+app.use(express.json());
 app.use(express.static("public/"));
 
 
@@ -238,7 +239,9 @@ app.post('/insert-req', urlencodedParser, async (req, res) => {
 		let timeLapsed = Date.now();
 		let today = new Date(timeLapsed);
 
-		await DBM.insertReturningTheInsertedDataID('TB_REQUISICAO', ['ID_TABELA', 'USUARIO', 'JUSTIFICATIVA', 'ID_STATUS', 'DATA_REQ'], [id, 'teste', body.justify, 1, formatDate(today, 'mm/dd/aaaa')]).then(async (insertedReqid) => {
+		await DBM.insertReturningTheInsertedDataID('TB_REQUISICAO', 
+		['ID_TABELA', 'USUARIO', 'JUSTIFICATIVA', 'ID_STATUS', 'DATA_REQ'], 
+		[id, 'teste', body.justify, 1, formatDate(today, 'dd/mm/aaaa')]).then(async (insertedReqid) => {
 			let reqID = insertedReqid[0]['last_insert_rowid()'];
 			let creationDateBase = String(body.creationDate);
 			let year = creationDateBase.slice(0, 4);
@@ -617,7 +620,7 @@ app.get('/requests', async (req, res) => {
 		" TB_REQUISICAO.ID_TABELA = TB_TABELA.ID COLLATE NOCASE;";
 	await DBM.select(sql, []).then(async (request) => {
 		let response = request;
-		res.render("../views/see-all-req.ejs", {
+		res.render("see-all-req.ejs", {
 			requisitions: response
 		});
 	});
@@ -704,6 +707,14 @@ app.get('/request', async (req, res) => {
 			fields[field["ID_VARIAVEL"]] = Object.assign(fields[field["ID_VARIAVEL"]], objectToContainTheObject);
 		}
 		
+		let connection = undefined;
+		if (requestData["CONEXAO"].length > 0) {
+			connection = {
+				"ID_CONEXAO": requestData["CONEXAO"][0]["ID_CONEXAO"],
+				"CAMPOS": connectionFields
+			}
+		}
+
 		let response = {
 			'ID_TABELA': requestData["ID_TABELA"],
 			'ID_REQUISICAO': requestData["ID_REQUISICAO"],
@@ -712,10 +723,7 @@ app.get('/request', async (req, res) => {
 			"DATA_REQ": requestData["DATA_REQ"],
 			"STATUS": status,
 			"CAMPOS": tableFields,
-			"CONEXAO": {
-				"ID_CONEXAO": requestData["CONEXAO"][0]["ID_CONEXAO"],
-				"CAMPOS": connectionFields
-			},
+			"CONEXAO": connection,
 			"VARIAVEL": fields,
 		}
 		
@@ -723,14 +731,39 @@ app.get('/request', async (req, res) => {
 	});
 });
 
+
 /**
  * 
  */
 app.post('/request', urlencodedParser, async (req, res) => {
-	res.statusCode = 200;
+	const dataToDBColumns = {
+		"tableID": "ID",
+		"connectionID": "ID_CONEXAO",
+		"tableDesc": "CONTEUDO_TABELA",
+		"tablePath": "CAMINHO",
+		"database": "DATABASE",
+		"creationDate": "DATA_CRIACAO",
+		"lag": "DEFASAGEM",
+		"updateFrequency": "FREQUENCIA",
+		"datasetData": "CONJUNTODADOS_PRODUTO",
+		"ownerData": "OWNER",
+		"stewardData": "STEWARD",
+		"engResp": "ENG_INGESTAO",
+		"mechanics": "MECANICA",
+		"fieldID": "ID_VARIAVEL",
+		"fieldName": "NOME_CAMPO",
+		"fieldType": "TIPO_CAMPO",
+		"personType": "TIPO_PESSOA",
+		"fieldDesc": "DESCRICAO_CAMPO",
+		"isPK": "CH_PRIMARIA",
+		"acceptNull": "ACCEPT_NULL",
+		"isUNQ": "UNQ",
+		"volatile": "VOLATIL",
+		"LGPD": "LGPD",
+	}
+	
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	console.log(req.body);
-	console.log(req.query);
 	res.end();
 });
 

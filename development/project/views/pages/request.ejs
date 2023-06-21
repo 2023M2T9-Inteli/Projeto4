@@ -8,7 +8,7 @@
     <title>Requisições de alteração</title>
 </head>
 <body>
-    <% let connection = table.CONEXAO.CAMPOS; %>
+    <% let connection = table.CONEXAO; %>
     <% let tableFields = table.CAMPOS; %>
     <% let fields = table.VARIAVEL; %>
     <div class="container make-request">
@@ -44,7 +44,9 @@
         </div>
         <form action="" method="post" id="request-review-form">
             <input type="text" hidden="true" name="tableID" value="<%= table.ID_TABELA %>" id="tableID">
+            <% if (connection) {%>
             <input type="text" hidden="true" name="connectionID" value="<%= table.CONEXAO.ID_CONEXAO %>" id="connectionID">
+            <% } %>
             <h2>Aprovar as Alterações de Metadados</h2>
             <section class="article">
                 <label for="justify">Justificativa da alteração</label>
@@ -99,7 +101,7 @@
                             </div>
                             <div class="margin-bottom old input flex">
                                 <img class="icon big" src="/img/history-icon.svg" aria-hidden="true">
-                                <input value="<%= table.DATABASE.ORIGINAL %>" aria-label="Versão antiga" type="text" id="databaseOld" disabled data-name="database">
+                                <input value="<%= tableFields.DATABASE.ORIGINAL %>" aria-label="Versão antiga" type="text" id="databaseOld" disabled data-name="database">
                             </div>                            
                         </div>
                         <%}%>
@@ -163,7 +165,7 @@
                             </div>
                             <%}%>
     
-                            <% if (connection.FREQUENCIA != undefined) {%>
+                            <% if (connection && connection.FREQUENCIA != undefined) {%>
                             <label class="flex"
                             title="Intervalo entre as execuções do job/script deatualização/ingestão.
     Exemplo:
@@ -244,7 +246,7 @@
             </details>
             <%}%>
 
-            <% if (tableFields.ENG_INGESTAO != undefined || connection.MECANICA != undefined) {%>
+            <% if (tableFields.ENG_INGESTAO != undefined || (connection && connection.MECANICA != undefined)) {%>
             <details class="article">
                 <summary>Sustentação</summary>
                 <fieldset>
@@ -265,7 +267,7 @@
                             </div>
                             <%}%>
     
-                            <% if (connection.MECANICA != undefined) {%>
+                            <% if (connection && connection.MECANICA != undefined) {%>
                             <label
                              title="Se a alimentação é automática ou precisa de acionamento manual." class="flex" for="mechanics">
                                 Mecânica
@@ -292,8 +294,8 @@
             <details class="article">
                 <summary>Campos</summary>
                 <fieldset  class="fields">
-                    <%for (let index in table.VARIAVEL) {%>
-                        <%let field = table.VARIAVEL[index];%>
+                    <%for (let index in fields) {%>
+                        <%let field = fields[index];%>
                         <details>
                             <summary><%= field.NOME_VARIAVEL %></summary>
                             <fieldset class="field"">
