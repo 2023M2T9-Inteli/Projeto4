@@ -1,26 +1,32 @@
-
-  <div id="successtoast" class="successtoast">
-    <div>
-      <strong id="success">Salvo com sucesso!</strong>
-    </div>
+<div id="successtoast" class="successtoast">
+  <div>
+    <strong id="success">Salvo com sucesso!</strong>
   </div>
-  <script>
+</div>
 
-    // This function is scheduled to run 3 seconds after the page loads.
-    setTimeout(function(){
+
+<script>
+  // This function is scheduled to run 3 seconds after the page loads.
+  var cont = 0;
+  if (parseInt(cont) == 0) {
+    setTimeout(function () {
       document.getElementById('successtoast').animate([
-        {transform: 'translateY(0px)'},
-        {transform: 'translateX(300px)'}
-        ],{
-          duration: 2000,
-        }
+        { transform: 'translateY(0px)' },
+        { transform: 'translateX(300px)' }
+      ], {
+        duration: 1000,
+      }
       )
-    }, 3000);
-    
+    }, 200);
+
     // This function is scheduled to run 6 seconds after the page loads.
-    setTimeout(function(){
-      document.getElementById('successstoast').style.display = 'none';   
-    },6000);
+    setTimeout(function () {
+      document.getElementById('successstoast').style.display = 'none';
+    }, 6000);
+  }
 
-  </script>
 
+
+
+
+</script>

@@ -219,6 +219,7 @@ app.get("/insert-req", async (req, res) => {
 });
 
 
+
 /**
  * Endpoint to insert the requisition and redirect to the previous page
  * @returns {ejs}
@@ -865,6 +866,13 @@ app.get("/loading", (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	res.render("../views/partials/loading.ejs");
 });
+
+app.get("/toast", (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	res.render("../views/not_found.ejs");
+});
+
 
 /**
  * Function to render 404 page
