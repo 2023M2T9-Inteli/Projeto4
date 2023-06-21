@@ -34,7 +34,7 @@ select option:nth-of-type(2n) {
 /* ========================================================================================= */
 
 .search-content .search-bar{
-    border: 2px black solid;
+    border: 1.5px #373740 solid;
     border-radius: 50px;
     width: 100%;
     height: auto;
