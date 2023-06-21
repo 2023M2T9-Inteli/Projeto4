@@ -794,6 +794,27 @@ app.post('/remove-classification', urlencodedParser, async (req, res) => {
 	res.end();
 });
 
+app.post("/delet-req", urlencodedParser, async (req, res)=>{
+	res.statusCode = 200;
+	let id = req.body.id;
+	res.setHeader("Access-Control-Allow-Origin", "*");
+	let error = {"error": false};
+	await DBM.delete("TB_REQUISICAO", "ID_REQUISICAO=?", [id]).catch(() => {
+		error["error"] = true;
+	});
+	await DBM.delete("TB_REQ_VARIALVEL", "ID_REQUISICAO=?", [id]).catch(() => {
+		error["error"] = true;
+	});
+	await DBM.delete("TB_REQ_TABELA", "ID_REQUISICAO=?", [id]).catch(() => {
+		error["error"] = true;
+	});
+	await DBM.delete("TB_REQ_CONEXAO", "ID_REQUISICAO=?", [id]).catch(() => {
+		error["error"] = true;
+	});
+	res.json(error);
+	
+});
+
 app.get("/loading", (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*');
