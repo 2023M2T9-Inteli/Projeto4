@@ -870,7 +870,8 @@ app.get("/loading", (req, res) => {
 app.get("/toast", (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*');
-	res.render("../views/not_found.ejs");
+	// res.render("../views/not_found.ejs");
+	res.render("../views/partials/toasts.ejs");
 });
 
 

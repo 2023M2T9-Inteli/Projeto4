@@ -7,7 +7,7 @@
   position: absolute;
   right: 0;
   top: 7vh;
-  margin: 2%;
+  margin: 30px;
   overflow: hidden;
 
   background: #9bf0bd;
@@ -27,7 +27,7 @@
 #success strong {
   color: #467757;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 18px;
 }
 
 .errortoast {
@@ -54,9 +54,3 @@
   align-items: center;
 
 }
-
-/* #error strong{
-  color: #467757;
-  font-weight: bold;
-  font-size: 18px;
-} */
