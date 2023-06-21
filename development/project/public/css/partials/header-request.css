@@ -1,7 +1,8 @@
 
 .header-request{
     display: grid;
-    grid-template-columns: repeat(12,1fr);
+    grid-template-columns: 2fr 1fr 8fr 1fr;
+    grid-template-rows: repeat(1,1fr);
     position: fixed;
     width: 100%;
     top: 0;
@@ -9,26 +10,54 @@
     box-shadow: #373740 0 0 10px;
 }
 .header-request .go_back{
-    grid-area: 1/1/2/2;
+    display: flex;
+    align-items: center;
+    margin-left: 13px;
+
 }
-.header-request .logo{
+.header-request .go_back .logo{
     margin: 0  5%;
-    font-size: 72px;
+    font-size: 4rem;
     font-family: "Rubik";
-    width: 100%;
     color: #373740;
     font-weight: 900;
+    resize: both;
+
 }
 .header-request .back_button{
-    
     border: 0;
     background: transparent;
     height: 100%;
     cursor: pointer;
 }
-.header-request .icon_back {
-    max-width: 5rem;   
+.header-request .icon_back{
+    max-width: 3rem;   
   	height: auto; 
-    position: fixed;
-    margin: -2% 0.5%;
+    position: relative;
+    left: 5%;
+}
+
+.header-request .table-info{
+    padding: 2%;
+    justify-content: center ;
+    grid-area: 1/3/2/12;
+
+}
+.names{
+    list-style: none;
+    text-align: center;
+}
+
+ .db-name{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    resize: both;
+}
+
+.tb-name{
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    resize: both;
 }
