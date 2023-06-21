@@ -38,29 +38,20 @@ Clique <a href="">AQUI</a> para ver o projeto funcionando.
 ## 📁 Estrutura de pastas
 
 <pre>
-├───docs
-├───development
-│   └───backup-database
-│   │       └───csv
-│   └───project
-│       ├───backend
-│       │      └───classes
-│       ├───data
-│       ├───public
-│       │       └───css
-│       │            └───partials
-│       │       └───html
-│       │       └───img
-│       │       └───js
-│       ├───views
-├───docs
+├───documentos
+├───imagens   
 ├───src
-│   └───project
-│       └───backend
-│           └───classes
-│       ├───data
-│       ├───frontend
-├───wad
+│     └───backend
+│          └───classes
+│     ├───data
+│     ├───node_modules
+      ├───public
+          └───css
+          └───img
+          └───js
+      ├───views
+          └───pages
+          └───partials
 </pre>
 
 A pasta raiz contem dois arquivos que devem ser alterados:
