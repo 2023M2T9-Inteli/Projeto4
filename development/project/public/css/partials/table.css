@@ -86,9 +86,16 @@ html, body{
 .table-content .table-body tr:nth-of-type(2n){
     background-color: var(--table-row-hover);
 }
+
+.table-content .table-body td{
+    pointer-events: none;
+}
+
 .table-content .table-body tr:hover{
     background: #9de0ffff;
 }
+
+
 /*-------------------------------------------------------------------------------------------*/
 /* Part referent to the details of the table */
 .table-details-content{
@@ -103,7 +110,7 @@ html, body{
 
 .table-details-content thead tr th .head-content{
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr auto 1fr auto;
     align-items: center;
 }
 .table-details-content .table{ 
@@ -269,9 +276,7 @@ html, body{
     border-spacing: 0;
     margin: 100px auto;
     
-    font-family: "Fredoka";
-    font-weight: lighter;
-    font-size: 16px;
+
 }
 .table-requisition .table-head .table-row-head{
     background: var(--ligth-table-head);
@@ -281,6 +286,9 @@ html, body{
 .table-requisition .table-head th{
     border-bottom: var(--table-head-border);
     padding: 5px;
+    font-family: "Fredoka";
+    font-weight: 500;
+    font-size: 16px;
 }
 
 .table-requisition .table-body tr:nth-of-type(2n){
@@ -294,6 +302,9 @@ html, body{
     border-bottom: none;
     padding: 10px; 
     text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
 }
 .table-requisition table tr:last-child > td {
     border-bottom: none;
