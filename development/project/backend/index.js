@@ -663,7 +663,8 @@ app.get('/requests', async (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	let sql = "select TB_REQUISICAO.*, TB_TABELA.TABELA  from TB_REQUISICAO" +
 		" inner join TB_TABELA on " +
-		" TB_REQUISICAO.ID_TABELA = TB_TABELA.ID COLLATE NOCASE;";
+		" TB_REQUISICAO.ID_TABELA = TB_TABELA.ID COLLATE NOCASE" +
+		"WHERE TB_REQUISICAO.ID_STATUS = 1;";
 	await DBM.select(sql, []).then(async (request) => {
 		let response = request;
 		res.render("see-all-req.ejs", {
@@ -785,7 +786,7 @@ app.post('/request', urlencodedParser, async (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	let data = req.body;
 	
-	let obj = {ID_STATUS: 2};
+	let obj = {ID_STATUS: data.status};
 	
 	await DBM.update('TB_REQUISICAO', obj, "ID_REQUISICAO=?", [data.reqID]);
 	await changeInputNameToDBNameAndUpdate('TB_TABELA', data.table, "ID=?", data.tableID);

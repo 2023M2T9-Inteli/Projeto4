@@ -4,10 +4,12 @@
  */
 export function sendCustumizedData(event) {
     const connectionKeys = ["mechanics", "updateFrequency"];
-    
+    const eventType = event.target.dataset.type;
+    const status = 2 ? eventType == "accept" : 3;
+
     event.preventDefault();    
     let fields = document.querySelectorAll('form fieldset.field');
-    let values = {"fields": {}};
+    let values = {"fields": {}, 'status': status};
 
     let baseInputs = document.querySelectorAll('form > input:not([disabled])');
     values = joinObjects(values, getInputsValues(baseInputs));
