@@ -31,7 +31,7 @@ html, body{
 
 .table-content li a{
     display: inline-block;
-  
+    color: #000;
     text-decoration: none;
 }
 .table-content .desc-area{
@@ -48,10 +48,8 @@ html, body{
     max-width: 80%;
     font-size: 15px;
 }
-.table-content .button-report{
-    cursor: pointer;
-    border: none;
-    background: transparent;
+.table-content .button{
+   text-decoration: none;
 }
 /* Part referent to the stiling of the table itself */
 .table-content .table{ 
