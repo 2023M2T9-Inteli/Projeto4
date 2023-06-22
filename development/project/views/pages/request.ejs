@@ -44,6 +44,7 @@
         </div>
         <form action="" method="post" id="request-review-form">
             <input type="text" hidden="true" name="tableID" value="<%= table.ID_TABELA %>" id="tableID">
+            <input type="text" hidden="true" name="reqID" value="<%= table.ID_REQUISICAO %>" id="reqID">
             <% if (connection) {%>
             <input type="text" hidden="true" name="connectionID" value="<%= table.CONEXAO.ID_CONEXAO %>" id="connectionID">
             <% } %>
@@ -110,38 +111,11 @@
             </details>
             <%}%>
             
-            <% if (tableFields.DATA_CRIACAO != undefined || tableFields.DEFASAGEM != undefined || connection.FREQUENCIA != undefined) {%>
+            <% if (tableFields.DEFASAGEM != undefined || (connection && connection.FREQUENCIA != undefined)) {%>
             <details class="article">
                 <summary>Disponibilidade de Atualização</summary>
                 <fieldset>
                     <section>
-                        <% if (tableFields.DATA_CRIACAO != undefined) {%>
-                            <% 
-                                let creationDateBase = String(tableFields.DATA_CRIACAO.ORIGINAL);
-                                let day = creationDateBase.slice(0,2);
-                                let month = creationDateBase.slice(3,5);
-                                let year = creationDateBase.slice(6,10);
-                                let creationDateOld = `${year}-${month}-${day}`;
-
-                                creationDateBase = String(tableFields.DATA_CRIACAO.ALTERACAO);
-                                day = creationDateBase.slice(0,2);
-                                month = creationDateBase.slice(3,5);
-                                year = creationDateBase.slice(6,10);
-                                let creationDateNew = `${year}-${month}-${day}`;
-                            %>
-                            <label for="creationDate">
-                                Data de Criação
-                            </label>
-                            <div class="input flex">
-                                <img class="icon" src="/img/plus-icon.svg" aria-hidden="true">
-                                <input value="<%= creationDateNew %>" type="date" name="creationDate" id="creationDate">
-                            </div>
-                            <div class="margin-bottom old input flex">
-                                <img class="icon big" src="/img/history-icon.svg" aria-hidden="true">
-                                <input value="<%= creationDateOld %>" aria-label="Versão antiga" type="date" disabled data-name="creationDate" id="creationDateOld">
-                            </div>
-                            <%}%>
-
                             <% if (tableFields.DEFASAGEM != undefined) {%>
                             <label 
                             title="Esses dados estão “atrasados” quanto tempo em relação ao tempo real? As abreviações são MIN para minutos, H para horas, D para dias, M para meses, A para anos, seguidos de -N onde N é a defasagem. Além disso usamos o texto ONLINE para atualizações em tempo real. A defasagem não leva em conta o tempo de processamento do sistema. A defasagem também não é a frequência de atualização. Uma tabela pode ser atualizada a cada 2h, mas trazer dados D-1.

@@ -172,13 +172,14 @@ module.exports = class DBManager {
     /**
      * Function to update data in a given database
      * @param {String} table 
-     * @param {Object} data 
+     * @param {'object'} data 
      * @param {String} where 
      * @returns {Promise(resolve(queryResult), reject(Error))} 
      */
-    update(table, data, where) { 
+    update(table, data, where, otherValues=[]) { 
         const sets = Object.keys(data).map((key) => `${key} = ?`).join(", ");
-        const values = Object.values(data);
+        let values = Object.values(data);
+        values = values.concat(otherValues);
         const sql = `UPDATE ${table} SET ${sets} WHERE ${where};`;
         return this.returnDBAsPromise(sql, "run", values);
     }
