@@ -36,7 +36,7 @@
 
 ## 📝 LINK
 
-Clique <a href="https://phdhm5-1234.csb.app/">AQUI</a> para ver o projeto funcionando.
+Clique <a href="https://kmtq8m-1234.csb.app/">AQUI</a> para ver o projeto funcionando.
 
 ## 📁 Estrutura de pastas
 
@@ -47,7 +47,6 @@ Clique <a href="https://phdhm5-1234.csb.app/">AQUI</a> para ver o projeto funcio
 │     └───backend
 │          └───classes
 │     ├───data
-│     ├───node_modules
 |     ├───public
 |          └───css
 |          └───img
