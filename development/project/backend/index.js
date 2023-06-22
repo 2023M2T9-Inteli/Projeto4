@@ -3,7 +3,7 @@ const DBManager = require('./classes/DBManager.js');
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-const DBPATH = 'data/project.db';
+const DBPATH = 'data/projeto.db';
 const DBM = new DBManager(DBPATH)
 
 const hostname = '127.0.0.1';
@@ -736,6 +736,19 @@ app.get('/request', async (req, res) => {
  * 
  */
 app.post('/request', urlencodedParser, async (req, res) => {
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	let data = req.body;
+	
+	let obj = {ID_STATUS: 2};
+	await DBM.update('TB_REQUISICAO', obj, "ID_REQUISICAO=?", [data.reqID.ALTERACAO])
+	await changeInputNameToDBNameAndUpdate('TB_TABELA', data.table, "ID=?", data.tableID.ALTERACAO)
+	await changeInputNameToDBNameAndUpdate('TB_TABELA', data.table, "ID=?", data.tableID.ALTERACAO)
+
+	res.json({'error': true});
+});
+
+
+async function changeInputNameToDBNameAndUpdate(table, data, where, id) {
 	const dataToDBColumns = {
 		"tableID": "ID",
 		"connectionID": "ID_CONEXAO",
@@ -762,23 +775,16 @@ app.post('/request', urlencodedParser, async (req, res) => {
 		"LGPD": "LGPD",
 	}
 
-	res.setHeader('Access-Control-Allow-Origin', '*');
-	let data = req.body;
-
-	console.log(data);
-
-	if (data.table) {
-		for (let index in data.table) {
+	if (data) {
+		for (let index in data) {
 			let obj = {}
 			let dbIndex = dataToDBColumns[index];
-			obj[dbIndex] = data.table[index];
-			console.log(data.tableID.ALTERACAO)
-			await DBM.update('TB_TABELA', obj, `ID=${data.tableID.ALTERACAO}`);
+			obj[dbIndex] = data[index];
+			
+			await DBM.update(table, obj, where, [id]);
 		}
 	}
-	res.json({'error': true});
-});
-
+}
 
 /**
  * DELETE METHODS (D)
