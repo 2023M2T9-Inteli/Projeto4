@@ -11,8 +11,9 @@
     <header>
         <%- include("../partials/header-insert-req.ejs"); %>
     </header>
+    <%if (table.CONEXAO) {%>
     <% let connection = table.CONEXAO[0]; %>
-    
+    <%}%>
     <div class="container make-request">
         <div class="datalists">
             <datalist id="lagDatalist">
@@ -46,7 +47,9 @@
         </div>
         <form action="/insert-req" method="post" id="make-request-form">
             <input type="text" hidden="true" name="tableID" value="<%= table.ID %>" id="tableID">
-            <input type="text" hidden="true" name="connectionID" value="<%= connection.ID_CONEXAO %>" id="connectionID">
+            <%if (connection) {%>
+                <input type="text" hidden="true" name="connectionID" value="<%= connection.ID_CONEXAO %>" id="connectionID">
+            <%}%>
             <h2>Sugerir alteração de metadados</h2>
             <article class="article">
                 
@@ -132,6 +135,7 @@
                                 <input value="<%= table.DEFASAGEM %>" aria-label="Versão antiga" type="text" disabled data-name="lag" id="lagOld">
                             </div>
     
+                            <%if (connection) {%>
                             <label class="flex"
                             title="Intervalo entre as execuções do job/script deatualização/ingestão.
     Exemplo:
@@ -151,6 +155,7 @@
                                 <img class="icon big" src="/img/history-icon.svg" aria-hidden="true">
                                 <input aria-label="Versão antiga" type="text" disabled data-name="updateFrequency" value="<%= connection.FREQUENCIA %>" id="updateFrequencyOld">
                             </div>
+                            <%}%>
                     </section>
                 </fieldset>
             </details>
@@ -220,6 +225,7 @@
                                 <input aria-label="Versão antiga" type="text" disabled data-name="engResp" value="<%= table.ENG_INGESTAO %>" id="engRespOld">
                             </div>
     
+                            <%if (connection) {%>
                             <label title="Se a alimentação é automática ou precisa de acionamento manual." class="flex" for="mechanics">
                                 Mecânica
                                 <img src="/img/info.svg" aria-hidden="true">
@@ -238,6 +244,7 @@
                                     <option <%= connection.MECANICA != 'AUTOMATICA' ? 'selected' : '' %> value="MANUAL">MANUAL</option>
                                 </select>
                             </div>
+                            <%}%>
                     </section>
                 </fieldset>
             </details>
