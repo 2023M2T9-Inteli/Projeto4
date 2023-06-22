@@ -785,7 +785,6 @@ app.get('/request', async (req, res) => {
 app.post('/request', urlencodedParser, async (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	let data = req.body;
-	
 	let obj = {ID_STATUS: data.status};
 	
 	await DBM.update('TB_REQUISICAO', obj, "ID_REQUISICAO=?", [data.reqID]);

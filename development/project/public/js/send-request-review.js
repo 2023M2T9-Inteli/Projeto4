@@ -4,8 +4,8 @@
  */
 export function sendCustumizedData(event) {
     const connectionKeys = ["mechanics", "updateFrequency"];
-    const eventType = event.target.dataset.type;
-    const status = 2 ? eventType == "accept" : 3;
+    const eventType = event.submitter.dataset.type;
+    const status = eventType == "accept" ? 2 : 3;
 
     event.preventDefault();    
     let fields = document.querySelectorAll('form fieldset.field');
