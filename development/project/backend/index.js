@@ -788,12 +788,14 @@ app.post('/request', urlencodedParser, async (req, res) => {
 	let obj = {ID_STATUS: data.status};
 	
 	await DBM.update('TB_REQUISICAO', obj, "ID_REQUISICAO=?", [data.reqID]);
-	await changeInputNameToDBNameAndUpdate('TB_TABELA', data.table, "ID=?", data.tableID);
-	for (let index in data.fields) {
-		let field = data.fields[index];
-		await changeInputNameToDBNameAndUpdate('TB_VARIAVEL', field, "ID_VARIAVEL=?", index);
+	if (data.status == 2) {
+		await changeInputNameToDBNameAndUpdate('TB_TABELA', data.table, "ID=?", data.tableID);
+		for (let index in data.fields) {
+			let field = data.fields[index];
+			await changeInputNameToDBNameAndUpdate('TB_VARIAVEL', field, "ID_VARIAVEL=?", index);
+		}
 	}
-	res.json({'error': true});
+	res.json({'error': false});
 });
 
 
