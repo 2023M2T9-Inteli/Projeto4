@@ -664,7 +664,7 @@ app.get('/requests', async (req, res) => {
 	let sql = "select TB_REQUISICAO.*, TB_TABELA.TABELA  from TB_REQUISICAO" +
 		" inner join TB_TABELA on " +
 		" TB_REQUISICAO.ID_TABELA = TB_TABELA.ID COLLATE NOCASE" +
-		"WHERE TB_REQUISICAO.ID_STATUS = 1;";
+		" WHERE TB_REQUISICAO.ID_STATUS = 1;";
 	await DBM.select(sql, []).then(async (request) => {
 		let response = request;
 		res.render("see-all-req.ejs", {
