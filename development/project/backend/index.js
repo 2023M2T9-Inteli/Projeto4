@@ -3,11 +3,11 @@ const DBManager = require('./classes/DBManager.js');
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-const DBPATH = 'data/projeto.db';
+const DBPATH = 'data/project.db';
 const DBM = new DBManager(DBPATH)
 
 const hostname = '127.0.0.1';
-const port = 3000;
+const port = 1234;
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -883,13 +883,6 @@ app.get("/loading", (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	res.render("../views/partials/loading.ejs");
-});
-
-app.get("/toast", (req, res) => {
-	res.statusCode = 200;
-	res.setHeader('Access-Control-Allow-Origin', '*');
-	// res.render("../views/not_found.ejs");
-	res.render("../views/partials/toasts.ejs");
 });
 
 
