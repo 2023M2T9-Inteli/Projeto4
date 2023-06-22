@@ -11,9 +11,13 @@
     <header>
         <%- include("../partials/header-insert-req.ejs"); %>
     </header>
-    <%if (table.CONEXAO) {%>
-    <% let connection = table.CONEXAO[0]; %>
-    <%}%>
+    
+    <% let connection = table.CONEXAO; %>
+    <%if (connection.length > 0) {
+        connection = table.CONEXAO[0];
+    } else {
+        connection = null;
+    }%>
     <div class="container make-request">
         <div class="datalists">
             <datalist id="lagDatalist">
