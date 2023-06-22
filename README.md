@@ -28,7 +28,7 @@
 - <a href="https://www.linkedin.com/in/henrique-mohallem-paiva-6854b460/">Henrique Paiva</a>
 
 # Descrição 
-> 📜 O respectivo projeto foi desenvolvido pelo grupo Datails no módulo 2 da turma 2023.1 do Inteli (Instituto de Tecnologia e Liderança) em parceria com o Banco Pan. De forma resumida, o projeto será um <strong>catálogo de dados</strong> para os bancos de dados do Banco Pan. Nele, o usuário terá uma plataforma de pesquisa para buscar por dados em tabelas de forma simples e prática, analisar seus dados de forma visualmente agradável e podendo reportar erros nos metadados para a governança de dados.
+> 📜 O respectivo projeto foi desenvolvido pelo grupo Datails no módulo 2 da turma 2023.1 do Inteli (Instituto de Tecnologia e Liderança) em parceria com o Banco Pan. De forma resumida, o projeto será um <strong>catálogo de dados</strong> para os bancos de dados do Banco Pan. Nele, o usuário terá uma plataforma de pesquisa para buscar por dados em tabelas de forma simples e prática, analisar seus dados de forma visualmente agradável e podendo reportar erros nos metadados para a governança de dados.<br>
 <a href="https://drive.google.com/file/d/1UNkJucp1afdtywji5wxdM7Y1-ZHzNiw2/view?usp=sharing"> Vídeo da aplicação web</a> 
 
 
