@@ -8,6 +8,7 @@
     <title>Requisições de alteração</title>
 </head>
 <body>
+    <%- include("../partials/header-request.ejs"); %>
     <% let connection = table.CONEXAO; %>
     <% let tableFields = table.CAMPOS; %>
     <% let fields = table.VARIAVEL; %>
@@ -444,14 +445,10 @@ BOOLEAN" class="flex" for="fieldType<%= index %>">
                 </fieldset>    
             </details>
             <%}%>
-
-            <a href="/delet-req?id=<%= table.ID_REQUISICAO%>" class="buttons">
-                <button type="button">Recusar</button>
-            </a>
             <div class="buttons">
-                <button type="submit">Enviar</button>
+                <button type="submit" data-type="refuse" class="refuse">Recusar</button>
+                <button type="submit" data-type="accept" class="accept">Aceitar</button>  
             </div>
-            
         </form>
     </div>
     <script type="module" src="/js/main.js"></script>
