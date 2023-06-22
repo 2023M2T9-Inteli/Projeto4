@@ -34,6 +34,51 @@ function formatDate(date, format) {
 
 
 /**
+ * Function to change input name to db columns name and do an update
+ * @param {String} table 
+ * @param {'object'} data 
+ * @param {String} where 
+ * @param {*} id 
+ */
+async function changeInputNameToDBNameAndUpdate(table, data, where, id) {
+	const dataToDBColumns = {
+		"tableID": "ID",
+		"connectionID": "ID_CONEXAO",
+		"tableDesc": "CONTEUDO_TABELA",
+		"tablePath": "CAMINHO",
+		"database": "DATABASE",
+		"creationDate": "DATA_CRIACAO",
+		"lag": "DEFASAGEM",
+		"updateFrequency": "FREQUENCIA",
+		"datasetData": "CONJUNTODADOS_PRODUTO",
+		"ownerData": "OWNER",
+		"stewardData": "STEWARD",
+		"engResp": "ENG_INGESTAO",
+		"mechanics": "MECANICA",
+		"fieldID": "ID_VARIAVEL",
+		"fieldName": "NOME_CAMPO",
+		"fieldType": "TIPO_CAMPO",
+		"personType": "TIPO_PESSOA",
+		"fieldDesc": "DESCRICAO_CAMPO",
+		"isPK": "CH_PRIMARIA",
+		"acceptNull": "ACCEPT_NULL",
+		"isUNQ": "UNQ",
+		"volatile": "VOLATIL",
+		"LGPD": "LGPD",
+	}
+
+	if (data) {
+		for (let index in data) {
+			let obj = {}
+			let dbIndex = dataToDBColumns[index];
+			obj[dbIndex] = data[index];
+			await DBM.update(table, obj, where, [id]);
+		}
+	}
+}
+
+
+/**
  * Function to the Return all data from a table
  * @param {String} id 
  * @returns {Object} JSON with database data
@@ -740,51 +785,16 @@ app.post('/request', urlencodedParser, async (req, res) => {
 	let data = req.body;
 	
 	let obj = {ID_STATUS: 2};
-	await DBM.update('TB_REQUISICAO', obj, "ID_REQUISICAO=?", [data.reqID.ALTERACAO])
-	await changeInputNameToDBNameAndUpdate('TB_TABELA', data.table, "ID=?", data.tableID.ALTERACAO)
-	await changeInputNameToDBNameAndUpdate('TB_TABELA', data.table, "ID=?", data.tableID.ALTERACAO)
-
+	
+	await DBM.update('TB_REQUISICAO', obj, "ID_REQUISICAO=?", [data.reqID]);
+	await changeInputNameToDBNameAndUpdate('TB_TABELA', data.table, "ID=?", data.tableID);
+	for (let index in data.fields) {
+		let field = data.fields[index];
+		await changeInputNameToDBNameAndUpdate('TB_VARIAVEL', field, "ID_VARIAVEL=?", index);
+	}
 	res.json({'error': true});
 });
 
-
-async function changeInputNameToDBNameAndUpdate(table, data, where, id) {
-	const dataToDBColumns = {
-		"tableID": "ID",
-		"connectionID": "ID_CONEXAO",
-		"tableDesc": "CONTEUDO_TABELA",
-		"tablePath": "CAMINHO",
-		"database": "DATABASE",
-		"creationDate": "DATA_CRIACAO",
-		"lag": "DEFASAGEM",
-		"updateFrequency": "FREQUENCIA",
-		"datasetData": "CONJUNTODADOS_PRODUTO",
-		"ownerData": "OWNER",
-		"stewardData": "STEWARD",
-		"engResp": "ENG_INGESTAO",
-		"mechanics": "MECANICA",
-		"fieldID": "ID_VARIAVEL",
-		"fieldName": "NOME_CAMPO",
-		"fieldType": "TIPO_CAMPO",
-		"personType": "TIPO_PESSOA",
-		"fieldDesc": "DESCRICAO_CAMPO",
-		"isPK": "CH_PRIMARIA",
-		"acceptNull": "ACCEPT_NULL",
-		"isUNQ": "UNQ",
-		"volatile": "VOLATIL",
-		"LGPD": "LGPD",
-	}
-
-	if (data) {
-		for (let index in data) {
-			let obj = {}
-			let dbIndex = dataToDBColumns[index];
-			obj[dbIndex] = data[index];
-			
-			await DBM.update(table, obj, where, [id]);
-		}
-	}
-}
 
 /**
  * DELETE METHODS (D)
